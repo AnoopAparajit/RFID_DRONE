@@ -1,6 +1,6 @@
 import time
 import serial
-          
+import subprocess          
 ser = serial.Serial(
               
     port='/dev/ttyS0',
@@ -14,4 +14,7 @@ counter=0
 
 while 1:
     x=ser.readline()
-    print x
+    if x:   
+        print x
+    else:
+        subprocess.call("python servo.py 1", shell=True) 

@@ -9,7 +9,7 @@ GPIO.setup(7, GPIO.IN)
 while True:
     if GPIO.input(7):
         print("Intruder detected")
-        subprocess.call("python servo.py 1", shell=True)
+        subprocess.call("python rfid.py 1", shell=True)
         time.sleep(2)
     else:
         print("No intruders")
